@@ -1949,8 +1949,13 @@ class Qwen3TTSStreamingVocoderScheduler(
                 else:
                     cached_slot = cache_arena.acquire()
                     assert cached_slot is not None
-                cache_arena.copy_slot_from(cached_slot, arena, plan.slot)
-                self.reference_codec_cache[key] = cached_slot
+                try:
+                    cache_arena.copy_slot_from(cached_slot, arena, plan.slot)
+                except RuntimeError:
+                    cache_arena.release(cached_slot)
+                    raise
+                else:
+                    self.reference_codec_cache[key] = cached_slot
 
     def decode_incremental_windows(
         self,
