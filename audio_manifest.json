@@ -1,0 +1,33 @@
+{
+  "purpose": "Paired listening samples from the PR scheduler; no AR resampling, normalization, or trimming.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+  "gpu": "NVIDIA L4",
+  "dtype": "bfloat16",
+  "torch": "2.13.0+cu130",
+  "text": "Your grandma, your grandfather, your kids, your other baby, and all of you can wear the same pajamas and enjoy the lovely moment for Christmas.",
+  "reference_frames": 48,
+  "target_frames": 112,
+  "first_chunk_frames": 16,
+  "followup_stride_frames": 8,
+  "batch_size": 1,
+  "cache_capacity": {
+    "cache-off": 0,
+    "cache-hit": 16
+  },
+  "graphs": true,
+  "compile": true,
+  "fused_snake": true,
+  "sample_rate": 24000,
+  "samples": 215040,
+  "target_json_sha256": "43361f5b004a4fcf82ecfa97ca41a782dd3526c33639e895af6183c94116e0f2",
+  "reference_codes_sha256": "36ab7f4b6d0045e6bfaf9491af22fa1e0b0508e0e7aace31b4f092dc8b9f6f50",
+  "cache_hit_repeat_bit_exact": true,
+  "rmse": 0.0009025266044773161,
+  "max_abs": 0.02713775634765625,
+  "wav_sha256": {
+    "cache-off.wav": "99e3f7bafc03a70ac59d22ea418ade0777b48e687b4b8d37cb6d9fd455c7848b",
+    "cache-hit.wav": "eb8929f56abc75470fbc7efe93bcb6730464be6a64619af794b36a779e4003b5"
+  },
+  "source_commit": "97b6cabeba642dd1a1bde2e790748541349b4329"
+}
